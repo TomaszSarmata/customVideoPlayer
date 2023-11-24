@@ -26,7 +26,27 @@ function updatePlayIcon() {
 //update progress and timestamp
 function updateProgress() {
   progress.value = (video.currentTime / video.duration) * 100;
-  //   console.log(video.currentTime);
+  //Get mins
+  let mins = Math.floor(video.currentTime / 60);
+  if (mins < 10) {
+    mins = "0" + String(mins);
+  }
+
+  //Get secs
+  let secs = Math.floor(video.currentTime % 60);
+  if (secs < 10) {
+    secs = "0" + String(secs);
+  }
+
+  timestamp.innerHTML = `${mins}:${secs}`;
+  //below is implementation for the timestmp from the copilot
+  //   const currentTime = Math.floor(video.currentTime);
+  //   const minutes = Math.floor(currentTime / 60);
+  //   const seconds = currentTime % 60;
+  //   const formattedTime = `${minutes.toString().padStart(2, "0")}:${seconds
+  //     .toString()
+  //     .padStart(2, "0")}`;
+  //   timestamp.innerHTML = formattedTime;
 }
 
 //set video time to progress
