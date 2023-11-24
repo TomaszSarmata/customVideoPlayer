@@ -61,6 +61,11 @@ h1 {
   font-weight: bold;
   margin-left: 10px;
 }
+
+.button:focus {
+  outline: 0;
+}
+
 @media (max-width: 800px) {
   .screen,
   .controls {
